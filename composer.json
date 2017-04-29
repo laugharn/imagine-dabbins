@@ -1,0 +1,7 @@
+{
+    "require": {
+        "abraham/twitteroauth": "^0.7.2",
+        "league/csv": "^8.2",
+        "vlucas/phpdotenv": "^2.4"
+    }
+}
