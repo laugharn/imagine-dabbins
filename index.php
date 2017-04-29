@@ -1,15 +1,15 @@
 <?php
-    require '../vendor/autoload.php';
+    require './vendor/autoload.php';
 
     use Abraham\TwitterOAuth\TwitterOAuth;
     use League\Csv\Reader;
 
-    $dotenv = new Dotenv\Dotenv('../');
+    $dotenv = new Dotenv\Dotenv(__DIR__);
     $dotenv->load();
 
     $connection = new TwitterOAuth(getenv('CONSUMER_KEY'), getenv('CONSUMER_SECRET'), getenv('ACCESS_TOKEN'), getenv('ACCESS_TOKEN_SECRET'));
 
-    $csv = Reader::createFromPath('names.csv');
+    $csv = Reader::createFromPath('include/names.csv');
 
     $names = $csv->setOffset(1)->fetchAll();
     shuffle($names);
