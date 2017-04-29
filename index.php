@@ -9,7 +9,7 @@
 
     $connection = new TwitterOAuth(getenv('CONSUMER_KEY'), getenv('CONSUMER_SECRET'), getenv('ACCESS_TOKEN'), getenv('ACCESS_TOKEN_SECRET'));
 
-    $csv = Reader::createFromPath('include/names.csv');
+    $csv = Reader::createFromPath('./include/names.csv');
 
     $names = $csv->setOffset(1)->fetchAll();
     shuffle($names);
